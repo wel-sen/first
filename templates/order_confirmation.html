@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Order Submitted!</h1>
+<p> You Should receive an email soon</p>
+<a href="{% url 'index' %}">Goto home page</a>
+</br>
+</br>
+<hr>
+<h2 color=rgb(0,255,0)>Order Summary:</h2>
+
+{% for item in items %} 
+
+<p color="red">{{item.name}}: <span color="orange" class="pl-3">{{item.price}}</span></p>
+
+{% endfor %}
+
+<p color="white"> Total:{{price}}</p>
+
+{% endblock %}

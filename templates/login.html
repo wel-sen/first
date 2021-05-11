@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<form method="post" action="login">
+
+{% csrf_token %}
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-5 col-sm-12">
+            <input type="text" name="Username" placeholder="Username">
+            </br>
+            <input type="password" name="password"placeholder="password">
+            </br>
+            </br>
+            <input type="submit" value="Log in">
+        </div>
+    </div>
+</div>
+
+{% for message in messages  %}
+
+<h3>{{message}}</h3>
+
+{% endfor %}
+
+
+
+{% endblock %}
